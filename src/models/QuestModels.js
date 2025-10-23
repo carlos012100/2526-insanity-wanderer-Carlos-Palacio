@@ -1,12 +1,14 @@
-const mongoose = require('mongoose')
-const {Schema} = mongoose
+const mongoose = require('mongoose');
 
-const questSchema = new Schema ({
+const { Schema } = mongoose;
+
+const questSchema = new Schema({
     day_number: Number,
     day_week: String,
     start_time: String,
     end_time: String,
     characters: [String]
-})
+});
 
-module.exports = mongoose('userDatabase', questSchema)
+// Model name = 'Quest' → collection = 'quests'
+module.exports = mongoose.model('Quest', questSchema);

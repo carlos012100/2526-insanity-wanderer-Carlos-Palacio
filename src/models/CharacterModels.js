@@ -1,4 +1,4 @@
-const mongoose = requre('mongoose')
+const mongoose = require('mongoose')
 
 const {Schema} = mongoose;
 
@@ -22,5 +22,5 @@ const charactersSchema = new Schema ({
 
 });
 
-module.exports = mongoose('userDatabase', charactersSchema)
+module.exports = mongoose.model('userDatabase', charactersSchema)
 

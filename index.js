@@ -1,29 +1,31 @@
-const express = require('express')
+const express = require('express');
 const bodyParser = require('body-parser');
-const { default: mongoose } = require('mongoose');
-const mongodbRoute = 'mongodb+srv://carlospalacio_db_user:Parlante12@practicetest.rmitya9.mongodb.net/'
+const mongoose = require('mongoose');
+const questRoutes = require('./src/routes/questRoutes');
 
-const userRoutes = require ('../route/userRoutes')
 const app = express();
-
 const PORT = process.env.PORT || 3000;
+const mongodbRoute = 'mongodb+srv://carlospalacio_db_user:Parlante10@practicetest.rmitya9.mongodb.net/';
 
-app.use(bodyParser.json)
+// Middleware
+app.use(bodyParser.json());
 
-app.use("/api/Quest", userRoutes)
+// Routes
+app.use('/api/Quest', questRoutes);
 
-async function start()
-{
-    try{
+// Test route
+app.get('/', (req, res) => res.send('API is running...'));
+
+async function start() {
+    try {
         await mongoose.connect(mongodbRoute);
+        console.log('Conexión con MongoDB correcta');
         app.listen(PORT, () => {
-            console.log(`API is listening on port ${PORT}`)
+            console.log(`API listening on port ${PORT}`);
         });
-        console.log('conexion ocn Mongo correcta')
-    }
-    catch (error)
-    {
-        console.log(`error de conexion a DB: ${error.message}`)
+    } catch (error) {
+        console.error(`Error de conexión a DB: ${error.message}`);
     }
 }
+
 start();

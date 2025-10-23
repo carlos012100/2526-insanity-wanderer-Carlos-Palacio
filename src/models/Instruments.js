@@ -5,4 +5,4 @@ const instrumentSchema = new Schema ( {
     name: String, 
     description: String
 });
-module.exports = mongoose('userData', instrumentSchema)
+module.exports = mongoose.model('userData', instrumentSchema)

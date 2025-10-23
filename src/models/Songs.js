@@ -7,5 +7,5 @@ const songsSchema = new Schema ({
     time: Number,
     instruments: [String]
 })
-module.export = mongoose('userDatabase', songsSchema)
+module.exports = mongoose.model('userDatabase', songsSchema)
 
