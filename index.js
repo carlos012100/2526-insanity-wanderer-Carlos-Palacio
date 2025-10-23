@@ -3,11 +3,14 @@ const bodyParser = require('body-parser');
 const { default: mongoose } = require('mongoose');
 const mongodbRoute = 'mongodb+srv://carlospalacio_db_user:Parlante12@practicetest.rmitya9.mongodb.net/'
 
+const userRoutes = require ('../route/userRoutes')
 const app = express();
 
 const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json)
+
+app.use("/api/Quest", userRoutes)
 
 async function start()
 {
