@@ -1,0 +1,30 @@
+{
+  "name": "serverinsanity",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev":"nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlos012100/2526-insanity-wanderer-Carlos-Palacio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/carlos012100/2526-insanity-wanderer-Carlos-Palacio/issues"
+  },
+  "homepage": "https://github.com/carlos012100/2526-insanity-wanderer-Carlos-Palacio#readme",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.19.2"
+  }
+}
