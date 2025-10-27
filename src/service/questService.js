@@ -8,5 +8,14 @@ const getAllQuests = async () => {
         throw error;
     }
 };
+const insertNewQuest = async (newQuest) => {
+    try {
+        const createdQuest = await Quests.insertNewQuest(newQuest)
+        return createdQuest;
+    }
+    catch (error){
+        throw error
+    }
+}
 
-module.exports = { getAllQuests };
+module.exports = { getAllQuests, insertNewQuest };

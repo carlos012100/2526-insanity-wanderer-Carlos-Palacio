@@ -5,7 +5,7 @@ const questRoutes = require('./src/routes/questRoutes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const mongodbRoute = 'mongodb+srv://carlospalacio_db_user:Parlante10@practicetest.rmitya9.mongodb.net/';
+const mongodbRoute = 'mongodb+srv://carlospalacio_db_user:Parlante12@theclusted.kqjlpls.mongodb.net/CharacterDB';
 
 // Middleware
 app.use(bodyParser.json());
@@ -19,7 +19,7 @@ app.get('/', (req, res) => res.send('API is running...'));
 async function start() {
     try {
         await mongoose.connect(mongodbRoute);
-        console.log('Conexión con MongoDB correcta');
+        console.log('Conexión con MongoDB correcta', mongoose.connection.name);
         app.listen(PORT, () => {
             console.log(`API listening on port ${PORT}`);
         });

@@ -10,5 +10,4 @@ const questSchema = new Schema({
     characters: [String]
 });
 
-// Model name = 'Quest' → collection = 'quests'
 module.exports = mongoose.model('Quest', questSchema);

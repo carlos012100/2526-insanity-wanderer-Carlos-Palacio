@@ -12,7 +12,20 @@ const getAllQuests = async () => {
         throw error;
     }
 };
+
+const insertNewQuest = async (newQuest) => {
+    try {
+        let questToInsert = new Quests(newQuest)
+        const createdQuest = await questToInsert.save()
+        return createdQuest
+    }
+    catch (error)
+    {
+        throw error
+    }
+}
 module.exports =  
 {
-    getAllQuests
+    getAllQuests, 
+    insertNewQuest
 }
