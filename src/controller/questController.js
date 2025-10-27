@@ -18,6 +18,7 @@ const getAllQuests = async (req, res) => {
 const insertNewQuest = async (req, res) => {
 
     const { body } = req;
+    
     if(
         !body.day_number ||
         !body.day_week ||
@@ -61,4 +62,3 @@ const insertNewQuest = async (req, res) => {
     }
 }
 module.exports = { getAllQuests, insertNewQuest};
-
